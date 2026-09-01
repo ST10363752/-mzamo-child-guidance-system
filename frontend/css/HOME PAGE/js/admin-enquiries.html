@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Enquiries - Mzamo Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-content {
+            padding: 30px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .admin-content h1 {
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        .admin-content .subtitle {
+            color: var(--mid-gray);
+            margin-bottom: 30px;
+        }
+        .admin-table {
+            width: 100%;
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .admin-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .admin-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .admin-table tr:hover {
+            background: var(--off-white);
+        }
+        .admin-table .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .status-new {
+            background: #cce5ff;
+            color: #004085;
+        }
+        .status-in-progress {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status-resolved {
+            background: #d4edda;
+            color: #155724;
+        }
+        .admin-table .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .admin-table .btn-view {
+            padding: 5px 15px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .admin-table .btn-view:hover {
+            background: var(--primary-dark);
+        }
+        .admin-table .btn-respond {
+            padding: 5px 15px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .admin-table .btn-respond:hover {
+            background: var(--secondary-dark);
+        }
+        .admin-table .btn-delete {
+            padding: 5px 15px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .admin-table .btn-delete:hover {
+            background: #c82333;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .back-link:hover {
+            color: var(--secondary);
+        }
+        .filter-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .filter-bar select,
+        .filter-bar input {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+        .filter-bar button {
+            padding: 10px 25px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .filter-bar button:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ADMIN NAV ===== -->
+    <div class="admin-header">
+        <div class="admin-nav">
+            <h1>⭐ Mzamo Admin</h1>
+            <ul class="admin-nav-links">
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="admin-programmes.html">Programmes</a></li>
+                <li><a href="admin-news.html">News</a></li>
+                <li><a href="admin-reports.html">Reports</a></li>
+                <li><a href="admin-enquiries.html" style="color: white;">Enquiries</a></li>
+                <li><a href="admin-login.html">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="admin-content">
+        <h1>📬 Manage Enquiries</h1>
+        <p class="subtitle">View, respond to, and manage enquiries from the website.</p>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <select>
+                <option value="all">All Status</option>
+                <option value="new">New</option>
+                <option value="in-progress">In Progress</option>
+                <option value="resolved">Resolved</option>
+            </select>
+            <input type="text" placeholder="Search by name or email...">
+            <button>Apply Filter</button>
+        </div>
+
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>John Doe</strong></td>
+                    <td>john@example.com</td>
+                    <td>I would like to know more about...</td>
+                    <td>Coming Soon</td>
+                    <td><span class="status-badge status-new">New</span></td>
+                    <td class="actions">
+                        <button class="btn-view">View</button>
+                        <button class="btn-respond">Respond</button>
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Jane Smith</strong></td>
+                    <td>jane@example.com</td>
+                    <td>I am interested in supporting...</td>
+                    <td>Coming Soon</td>
+                    <td><span class="status-badge status-in-progress">In Progress</span></td>
+                    <td class="actions">
+                        <button class="btn-view">View</button>
+                        <button class="btn-respond">Respond</button>
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>David Brown</strong></td>
+                    <td>david@example.com</td>
+                    <td>Can you send me information about...</td>
+                    <td>Coming Soon</td>
+                    <td><span class="status-badge status-resolved">Resolved</span></td>
+                    <td class="actions">
+                        <button class="btn-view">View</button>
+                        <button class="btn-respond">Respond</button>
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Mary Johnson</strong></td>
+                    <td>mary@example.com</td>
+                    <td>I would like to volunteer...</td>
+                    <td>Coming Soon</td>
+                    <td><span class="status-badge status-new">New</span></td>
+                    <td class="actions">
+                        <button class="btn-view">View</button>
+                        <button class="btn-respond">Respond</button>
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Peter Wilson</strong></td>
+                    <td>peter@example.com</td>
+                    <td>How can I make a donation...</td>
+                    <td>Coming Soon</td>
+                    <td><span class="status-badge status-new">New</span></td>
+                    <td class="actions">
+                        <button class="btn-view">View</button>
+                        <button class="btn-respond">Respond</button>
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="admin-dashboard.html" class="back-link">← Back to Dashboard</a>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
