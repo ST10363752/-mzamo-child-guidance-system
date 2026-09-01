@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage News - Mzamo Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-content {
+            padding: 30px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .admin-content h1 {
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        .admin-content .subtitle {
+            color: var(--mid-gray);
+            margin-bottom: 30px;
+        }
+        .add-btn {
+            padding: 10px 25px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+        .add-btn:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-2px);
+        }
+        .admin-table {
+            width: 100%;
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .admin-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .admin-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .admin-table tr:hover {
+            background: var(--off-white);
+        }
+        .admin-table .status-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .status-published {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status-draft {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status-upcoming {
+            background: #cce5ff;
+            color: #004085;
+        }
+        .admin-table .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .admin-table .btn-edit {
+            padding: 5px 15px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .admin-table .btn-edit:hover {
+            background: var(--secondary-dark);
+        }
+        .admin-table .btn-delete {
+            padding: 5px 15px;
+            background: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .admin-table .btn-delete:hover {
+            background: #c82333;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .back-link:hover {
+            color: var(--secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ADMIN NAV ===== -->
+    <div class="admin-header">
+        <div class="admin-nav">
+            <h1>⭐ Mzamo Admin</h1>
+            <ul class="admin-nav-links">
+                <li><a href="admin-dashboard.html">Dashboard</a></li>
+                <li><a href="admin-programmes.html">Programmes</a></li>
+                <li><a href="admin-news.html" style="color: white;">News</a></li>
+                <li><a href="admin-reports.html">Reports</a></li>
+                <li><a href="admin-enquiries.html">Enquiries</a></li>
+                <li><a href="admin-login.html">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="admin-content">
+        <h1>📝 Manage News & Updates</h1>
+        <p class="subtitle">Create, edit, or remove news articles and updates.</p>
+
+        <button class="add-btn">➕ Create New Article</button>
+
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Community Workshop on Cerebral Palsy Care</strong></td>
+                    <td>Coming Soon</td>
+                    <td><span class="status-badge status-upcoming">Upcoming</span></td>
+                    <td class="actions">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>New Partnership with Local Healthcare Providers</strong></td>
+                    <td>Coming Soon</td>
+                    <td><span class="status-badge status-draft">Draft</span></td>
+                    <td class="actions">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Awareness Campaign: Children's Rights</strong></td>
+                    <td>Coming Soon</td>
+                    <td><span class="status-badge status-draft">Draft</span></td>
+                    <td class="actions">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Annual General Meeting Report Available</strong></td>
+                    <td>Coming Soon</td>
+                    <td><span class="status-badge status-published">Published</span></td>
+                    <td class="actions">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Support Group Sessions Now Available</strong></td>
+                    <td>Ongoing</td>
+                    <td><span class="status-badge status-published">Published</span></td>
+                    <td class="actions">
+                        <button class="btn-edit">Edit</button>
+                        <button class="btn-delete">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="admin-dashboard.html" class="back-link">← Back to Dashboard</a>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
